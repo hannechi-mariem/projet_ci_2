@@ -2,6 +2,8 @@ package com.esprit.examen.controllers;
 
 import java.util.List;
 
+import com.esprit.examen.entities.DTOS.CategorieProduitDTO;
+import com.esprit.examen.entities.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +30,8 @@ public class CategorieProduitController {
 	@GetMapping("/retrieve-all-categorieProduit")
 	@ResponseBody
 	public List<CategorieProduit> getCategorieProduit() {
-		List<CategorieProduit> list = categorieProduitService.retrieveAllCategorieProduits();
-		return list;
+
+		return categorieProduitService.retrieveAllCategorieProduits();
 	}
 
 	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-categorieProduit/8
@@ -42,12 +44,15 @@ public class CategorieProduitController {
 	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
 	@PostMapping("/add-categorieProduit")
 	@ResponseBody
-	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
-		CategorieProduit categorieProduit = categorieProduitService.addCategorieProduit(cp);
-		return categorieProduit;
+	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduitDTO cp)
+	{
+		CategorieProduit categorieProduit=cp.toEntity();
+
+
+		return categorieProduitService.addCategorieProduit(categorieProduit);
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/remove-categorieProduit/{categorieProduit-id}
+
 	@DeleteMapping("/remove-categorieProduit/{categorieProduit-id}")
 	@ResponseBody
 	public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
@@ -57,8 +62,11 @@ public class CategorieProduitController {
 	// http://localhost:8089/SpringMVC/categorieProduit/modify-categorieProduit
 	@PutMapping("/modify-categorieProduit")
 	@ResponseBody
-	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
-		return categorieProduitService.updateCategorieProduit(categorieProduit);
+	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduitDTO categorieProduit)
+	{
+		CategorieProduit categorieProduit1=categorieProduit.toEntity();
+
+		return categorieProduitService.updateCategorieProduit(categorieProduit1);
 	}
 
 	

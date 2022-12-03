@@ -11,17 +11,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.esprit.examen.entities.DTOS.ProduitDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Produit implements Serializable {
 
 	/**
@@ -47,8 +47,14 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	
 
+	public ProduitDTO toDto() {
+		return ProduitDTO
+				.builder()
+				.idProduit(idProduit)
+
+				.build();
+	}
 
 	
 
