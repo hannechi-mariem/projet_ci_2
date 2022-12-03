@@ -46,7 +46,7 @@ import com.esprit.examen.repositories.StockRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @ExtendWith(SpringExtension.class)
-public class FournisseurServiceImpltest {
+class FournisseurServiceImpltest {
 	
 	@InjectMocks
 	FournisseurServiceImpl fournisseurServiceImpl;
@@ -70,7 +70,7 @@ public class FournisseurServiceImpltest {
     }
 	
 	@Test 
-	public void testAddFournisseur() {
+	void testAddFournisseur() {
     	when(fournisseurRepository.save(fournisseur1)).thenReturn(fournisseur1);
     
     	Fournisseur persistedProduct = fournisseurServiceImpl.addFournisseur(fournisseur1);
@@ -88,7 +88,7 @@ public class FournisseurServiceImpltest {
     	assertEquals(listOfProducts,fournisseurServiceImpl.retrieveAllFournisseurs());
     }
     @Test 
-    public void testUpdateFournisseur() {
+    void testUpdateFournisseur() {
     	when(fournisseurRepository.save(fournisseur1)).thenReturn(fournisseur1);
     	assertEquals(fournisseur1, fournisseurServiceImpl.updateFournisseur(fournisseur1));
     }
