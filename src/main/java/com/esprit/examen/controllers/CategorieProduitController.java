@@ -30,7 +30,10 @@ public class CategorieProduitController {
 	@GetMapping("/retrieve-all-categorieProduit")
 	@ResponseBody
 	public List<CategorieProduit> getCategorieProduit() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 		return categorieProduitService.retrieveAllCategorieProduits();
 	}
 
@@ -44,6 +47,7 @@ public class CategorieProduitController {
 	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
 	@PostMapping("/add-categorieProduit")
 	@ResponseBody
+<<<<<<< HEAD
 	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduitDTO cp)
 	{
 		CategorieProduit categorieProduit=cp.toEntity();
@@ -53,6 +57,12 @@ public class CategorieProduitController {
 	}
 
 
+=======
+	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
+		return categorieProduitService.addCategorieProduit(cp);
+	}
+
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 	@DeleteMapping("/remove-categorieProduit/{categorieProduit-id}")
 	@ResponseBody
 	public void removeCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {

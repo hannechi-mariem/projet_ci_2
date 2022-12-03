@@ -19,7 +19,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
 @ExtendWith(SpringExtension.class)
-public class FactureServiceImplTest {
+class FactureServiceImplTest {
 
     @InjectMocks
     FactureServiceImpl factureService;
@@ -44,7 +44,7 @@ public class FactureServiceImplTest {
     }
 
     @Test
-    public void testAddFacture() {
+    void testAddFacture() {
         when(factureRepository.save(facture1)).thenReturn(facture1);
 
         Facture persistedFacture = factureService.addFacture(facture1);

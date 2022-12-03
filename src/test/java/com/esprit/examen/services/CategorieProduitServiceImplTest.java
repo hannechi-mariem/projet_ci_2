@@ -18,7 +18,7 @@ package com.esprit.examen.services;
 
 
 @ExtendWith(SpringExtension.class)
-public class CategorieProduitServiceImplTest {
+class CategorieProduitServiceImplTest {
 
     @InjectMocks
     CategorieProduitServiceImpl categorieProduitService;
@@ -36,7 +36,7 @@ public class CategorieProduitServiceImplTest {
     }
 
     @Test
-    public void testAddCategorieProduit() {
+     void testAddCategorieProduit() {
         when(categorieProduitRepository.save(categorieProduit1)).thenReturn(categorieProduit1);
 
         CategorieProduit persistedCategorieProduit = categorieProduitService.addCategorieProduit(categorieProduit1);
@@ -52,14 +52,14 @@ public class CategorieProduitServiceImplTest {
     }
 
     @Test
-    public void testDeleteCategorieProduit() throws ParseException {
+     void testDeleteCategorieProduit() throws ParseException {
         CategorieProduit c = new CategorieProduit(3L, "Categorie3", "libelle3", null);
         CategorieProduit CategorieProduit = categorieProduitService.addCategorieProduit(c);
         categorieProduitService.deleteCategorieProduit(CategorieProduit.getIdCategorieProduit());
         assertNull(categorieProduitService.retrieveCategorieProduit(CategorieProduit.getIdCategorieProduit()));
     }
     @Test
-    public void testUpdateCategorieProduct() {
+     void testUpdateCategorieProduct() {
         when(categorieProduitRepository.save(categorieProduit1)).thenReturn(categorieProduit1);
         assertEquals(categorieProduit1, categorieProduitService.updateCategorieProduit(categorieProduit1));
     }

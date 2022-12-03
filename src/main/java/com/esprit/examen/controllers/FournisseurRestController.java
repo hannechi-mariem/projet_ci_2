@@ -29,7 +29,10 @@ public class FournisseurRestController {
 	@GetMapping("/retrieve-all-fournisseurs")
 	@ResponseBody
 	public List<Fournisseur> getFournisseurs() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 		return fournisseurService.retrieveAllFournisseurs();
 	}
 
@@ -44,7 +47,10 @@ public class FournisseurRestController {
 	@PostMapping("/add-fournisseur")
 	@ResponseBody
 	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 		return fournisseurService.addFournisseur(f);
 	}
 

@@ -28,11 +28,17 @@ public class ReglementRestController {
     // http://localhost:8089/SpringMVC/reglement/add-reglement
     @PostMapping("/add-reglement")
     @ResponseBody
+<<<<<<< HEAD
     public Reglement addReglement(@RequestBody ReglementDTO r) {
 
         Reglement reglement=r.toEntity();
 
         return reglementService.addReglement(reglement);
+=======
+    public Reglement addReglement(@RequestBody Reglement r) {
+
+        return reglementService.addReglement(r);
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
     }
     @GetMapping("/retrieve-all-reglements")
     @ResponseBody
@@ -54,7 +60,10 @@ public class ReglementRestController {
         return reglementService.retrieveReglementByFacture(factureId);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
     @GetMapping(value = "/getChiffreAffaireEntreDeuxDate/{startDate}/{endDate}")
     public float getChiffreAffaireEntreDeuxDate(
             @PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,

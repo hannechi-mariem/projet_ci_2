@@ -26,7 +26,10 @@ public class ProduitRestController {
 	@GetMapping("/retrieve-all-produits")
 	@ResponseBody
 	public List<Produit> getProduits() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 		return produitService.retrieveAllProduits();
 	}
 
@@ -37,6 +40,7 @@ public class ProduitRestController {
 		return produitService.retrieveProduit(produitId);
 	}
 
+<<<<<<< HEAD
 
 	@PostMapping("/add-produit")
 	@ResponseBody
@@ -47,13 +51,26 @@ public class ProduitRestController {
 	}
 
 
+=======
+	/* Ajouter en produit tout en lui affectant la catégorie produit et le stock associés */
+	@PostMapping("/add-produit")
+	@ResponseBody
+	public Produit addProduit(@RequestBody Produit p) {
+
+		return produitService.addProduit(p);
+	}
+
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 	@DeleteMapping("/remove-produit/{produit-id}")
 	@ResponseBody
 	public void removeProduit(@PathVariable("produit-id") Long produitId) {
 		produitService.deleteProduit(produitId);
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 	@PutMapping("/modify-produit")
 	@ResponseBody
 	public Produit modifyProduit(@RequestBody ProduitDTO p) {
@@ -72,5 +89,9 @@ public class ProduitRestController {
 		produitService.assignProduitToStock(idProduit, idStock);
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cbcfd6bc0d6f692138386e9adff9452576442cd3
 
 }
